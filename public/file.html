@@ -1,0 +1,17 @@
+<h1>Webpage in a file</h1>
+
+<form action="/thing"  method="post">
+    <input id="name" name="name" type="text" />
+    <button role="submit">Click me</button>
+</form>
+
+<span id="message" >Not loaded yet</span>
+
+<script>
+    console.log('doing javascript..')
+
+    window.setTimeout(() => {
+        fetch('/api').then(res => res.json()).then(v => document.getElementById('message').innerText = v.message);
+    }, 5000)
+    
+</script>
